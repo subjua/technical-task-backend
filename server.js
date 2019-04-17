@@ -42,7 +42,6 @@ class Server {
   start() {
     this.loadMidlewares()
     this.loadRoutes()
-    this.loadAPIDocs()
     this.initDB()
     this.runServer()
 
