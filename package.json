@@ -1,0 +1,27 @@
+{
+  "name": "task-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subjua/technical-task-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subjua/technical-task-backend/issues"
+  },
+  "homepage": "https://github.com/subjua/technical-task-backend#readme",
+  "dependencies": {
+    "koa": "2.7.0",
+    "koa-router": "7.4.0",
+    "pg": "7.9.0",
+    "pg-hstore": "2.3.2",
+    "sequelize": "5.6.0",
+    "sequelize-cli": "5.4.0"
+  }
+}
