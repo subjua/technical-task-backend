@@ -2,11 +2,11 @@
 npm i
 
 # Migrations
-## Create
+* **Create**
 npx sequelize migration:generate --name [migrationName]
-## Up
+* **Up** 
 npx sequelize db:migrate
-## Down
+* **Down** 
 npx sequelize db:migrate:undo
 
 # Run

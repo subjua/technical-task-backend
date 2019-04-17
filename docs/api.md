@@ -1,4 +1,3 @@
-Test
 # API V1 Docs
 
 ## Endpoints

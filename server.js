@@ -1,6 +1,5 @@
 const Koa = require('koa')
 const config = require('./config')
-const serve = require('koa-static')
 
 const router = require('./routes')
 
@@ -43,7 +42,6 @@ class Server {
   start() {
     this.loadMidlewares()
     this.loadRoutes()
-    this.app.use(serve('./static'))
     this.initDB()
     this.runServer()
 
