@@ -1,12 +1,13 @@
+Test
 # API V1 Docs
 
 ## Endpoints
 * [`POST /api/v1/tokens`](#register-application) - Create token for the application
 * [`GET /api/v1/notes`](#get-notes) - Get all notes.
-* `GET /api/v1/notes/:noteId` - Get note by id.
-* `POST /api/v1/notes` - Create note.
-* `PATCH /api/v1/notes` - Partial update note.
-* `DELETE /api/v1/notes` - Delete note.
+* [`GET /api/v1/notes/:noteId`](#get-note-by-id) - Get note by id.
+* [`POST /api/v1/notes`](#create-note) - Create note.
+* [`PATCH /api/v1/notes`](#update-note) - Partial update note.
+* [`DELETE /api/v1/notes`](#delete-note) - Delete note.
 
 ----
 
@@ -16,7 +17,7 @@
 * **Data Params**  
     ```json
       {
-        "userName": { type: string, required: true }
+        "userName": { "type": "string", "required": true }
       }
     ```
 * **Success Response**
@@ -53,13 +54,15 @@
 * **Error Response**
   * **Code:** 401 UNAUTHORIZED
   * **Code:** 400 BAD REQUEST
+
 ----
+
 ## Get Note by id
 * **Method** : `GET`
 * **URL** : `/api/v1/notes/:noteId`
 * **URL Params**  
   ```json
-      "noteId": { type: integer, required: true }
+      "noteId": { "type": "integer", "required": true }
     ```
 * **Success Response**
   * **Code:** 200
@@ -78,4 +81,79 @@
 * **Error Response**
   * **Code:** 401 UNAUTHORIZED
   * **Code:** 400 BAD REQUEST
+
+----
+
+## Create Note
+* **Method** : `POST`
+* **URL** : `/api/v1/notes`
+* **Data Params**  
+    ```json
+      {
+        "title": { "type": "string", "required": true },
+        "content": { "type": "string", "required": false }
+      }
+    ```
+* **Success Response**
+  * **Code:** 201
+  * **Content:**  
+    ```json 
+      {
+        "id": 20,
+        "title": "Note Title",
+        "content": "Note Content"
+      }
+    ```
+* **Error Response**
+  * **Code:** 401 UNAUTHORIZED
+  * **Code:** 400 BAD REQUEST
+  * **Code:** 404 NOT FOUND
+
+----
+
+## Update Note
+* **Method** : `PATCH`
+* **URL** : `/api/v1/notes/:noteId`
+* **URL Params**  
+  ```json
+      "noteId": { "type": "integer", "required": true }
+    ```
+* **Data Params**  
+    ```json
+      {
+        "title": { "type": "string", "required": false },
+        "content": { "type": "string", "required": false }
+      }
+    ```
+* **Success Response**
+  * **Code:** 200
+  * **Content:**  
+    ```json 
+      {
+        "id": 20,
+        "title": "Note Title",
+        "content": "Note Content"
+      }
+    ```
+* **Error Response**
+  * **Code:** 401 UNAUTHORIZED
+  * **Code:** 400 BAD REQUEST
+  * **Code:** 404 NOT FOUND
+
+----
+
+## Delete Note
+* **Method** : `DELETE`
+* **URL** : `/api/v1/notes/:noteId`
+* **URL Params**  
+  ```json
+      "noteId": { "type": "integer", "required": true }
+    ```
+* **Success Response**
+  * **Code:** 201 NO CONTENT
+* **Error Response**
+  * **Code:** 401 UNAUTHORIZED
+  * **Code:** 400 BAD REQUEST
+  * **Code:** 404 NOT FOUND
+
 ----
