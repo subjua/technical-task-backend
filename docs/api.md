@@ -36,6 +36,12 @@
 ## Get Notes
 * **Method** : `GET`
 * **URL** : `/api/v1/notes`
+* **Header Params**  
+    ```json
+      {
+        "Authorization": "Bearer {application_token}"
+      }
+    ```
 * **Success Response**
   * **Code:** 200
   * **Content:**  
@@ -59,6 +65,12 @@
 ## Get Note by id
 * **Method** : `GET`
 * **URL** : `/api/v1/notes/:noteId`
+* **Header Params**  
+    ```json
+      {
+        "Authorization": "Bearer {application_token}"
+      }
+    ```
 * **URL Params**  
   ```json
       "noteId": { "type": "integer", "required": true }
@@ -86,6 +98,12 @@
 ## Create Note
 * **Method** : `POST`
 * **URL** : `/api/v1/notes`
+* **Header Params**  
+    ```json
+      {
+        "Authorization": "Bearer {application_token}"
+      }
+    ```
 * **Data Params**  
     ```json
       {
@@ -113,6 +131,12 @@
 ## Update Note
 * **Method** : `PATCH`
 * **URL** : `/api/v1/notes/:noteId`
+* **Header Params**  
+    ```json
+      {
+        "Authorization": "Bearer {application_token}"
+      }
+    ```
 * **URL Params**  
   ```json
       "noteId": { "type": "integer", "required": true }
@@ -144,6 +168,12 @@
 ## Delete Note
 * **Method** : `DELETE`
 * **URL** : `/api/v1/notes/:noteId`
+* **Header Params**  
+    ```json
+      {
+        "Authorization": "Bearer {application_token}"
+      }
+    ```
 * **URL Params**  
   ```json
       "noteId": { "type": "integer", "required": true }
