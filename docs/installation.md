@@ -7,7 +7,9 @@
 * **Up** 
 ```sh npx sequelize db:migrate ```
 * **Down** 
-```sh npx sequelize db:migrate:undo ```
+```sh
+    $ npx sequelize db:migrate:undo
+```
 
 # Run
 ```sh npm start```
