@@ -4,6 +4,7 @@ const config = require('./config')
 const router = require('./routes')
 
 const corsMidleware = require('./midlewares/cors')
+const bodyParserMidleware = require('./midlewares/bodyParser')
 
 const DB = require('./db')
 
@@ -24,8 +25,14 @@ class Server {
     this.db.connect()
   }
 
+  loadAPIDocs() {
+   
+  }
+
   loadMidlewares() {
-    this.app.use(corsMidleware)
+    this.app
+      .use(corsMidleware)
+      .use(bodyParserMidleware)
   }
 
   connect() {
@@ -39,6 +46,7 @@ class Server {
   start() {
     this.loadMidlewares()
     this.loadRoutes()
+    this.loadAPIDocs()
     this.initDB()
     this.runServer()
 

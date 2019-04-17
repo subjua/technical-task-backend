@@ -3,13 +3,11 @@ const config = require('../config')
 
 class DB {
   constructor() {
-    this.db = null
+    this.db = new Sequelize(config.db)
   }
 
   async connect() {
     try {
-      this.db = new Sequelize(config.db)
-  
       await this.db.authenticate()
   
       console.info('Database Successful Connected.')

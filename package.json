@@ -18,6 +18,7 @@
   "homepage": "https://github.com/subjua/technical-task-backend#readme",
   "dependencies": {
     "koa": "2.7.0",
+    "koa-bodyparser": "4.2.1",
     "koa-router": "7.4.0",
     "pg": "7.9.0",
     "pg-hstore": "2.3.2",

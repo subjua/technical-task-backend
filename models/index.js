@@ -14,7 +14,7 @@ const getModels = () => {
     .forEach(file => {
       const model = dbConnect.db.import(path.join(__dirname, file))
 
-      models[model.name] = model
+      models[file.split('.')[0]] = model
     })
 
   return models
