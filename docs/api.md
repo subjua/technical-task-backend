@@ -1,7 +1,7 @@
 # API V1 Docs
 
 ## Endpoints
-* [`POST /api/v1/tokens`](#register-application) - Create token for the application
+* [`POST /api/v1/tokens`](#get-application-token) - Create token for the application
 * [`GET /api/v1/notes`](#get-notes) - Get all notes.
 * [`GET /api/v1/notes/:noteId`](#get-note-by-id) - Get note by id.
 * [`POST /api/v1/notes`](#create-note) - Create note.
@@ -10,7 +10,7 @@
 
 ----
 
-## Register Application
+## Get Application Token
 * **Method** : `POST`
 * **URL** : `/api/v1/tokens`
 * **Data Params**  
