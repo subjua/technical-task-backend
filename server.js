@@ -7,43 +7,45 @@ const corsMidleware = require('./midlewares/cors')
 
 const DB = require('./db')
 
-function Server() {
-  this.app = new Koa()
-  this.db = DB
-  this.server = null
-}
+class Server {
+  constructor() {
+    this.app = new Koa()
+    this.db = DB
+    this.server = null
+  }
 
-Server.prototype.loadRoutes = function () {
-  this.app
-    .use(router.routes())
-    .use(router.allowedMethods())
-}
+  loadRoutes() {
+    this.app
+      .use(router.routes())
+      .use(router.allowedMethods())
+  }
 
-Server.prototype.initDB = function () {
-  this.db.connect()
-}
+  initDB() {
+    this.db.connect()
+  }
 
-Server.prototype.loadMidlewares = function () {
-  this.app.use(corsMidleware)
-}
+  loadMidlewares() {
+    this.app.use(corsMidleware)
+  }
 
-Server.prototype.connect = function () {
-  this.app.use(corsMidleware)
-}
+  connect() {
+    this.app.use(corsMidleware)
+  }
 
-Server.prototype.runServer = function () {
-  this.server = this.app.listen(config.server.port)
-}
+  runServer() {
+    this.server = this.app.listen(config.server.port)
+  }
 
-Server.prototype.start = function () {
-  this.loadMidlewares()
-  this.loadRoutes()
-  this.initDB()
-  this.runServer()
+  start() {
+    this.loadMidlewares()
+    this.loadRoutes()
+    this.initDB()
+    this.runServer()
 
-  const { address, port } = this.server.address()
+    const { address, port } = this.server.address()
 
-  console.info(`Server Listening on ${address}:${port}`)
+    console.info(`Server Listening on ${address}:${port}`)
+  }
 }
 
 module.exports = Server

@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./config').db;
+module.exports = require('./index').db;
