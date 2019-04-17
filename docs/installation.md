@@ -1,13 +1,23 @@
 # Setup
-```sh npm i ```
+```sh
+  $ npm i
+```
 
 # Migrations
 * **Create**
-```sh npx sequelize migration:generate --name [migrationName] ```
+```sh
+  $ npx sequelize migration:generate --name [migrationName]
+```
 * **Up** 
-```sh npx sequelize db:migrate ```
+```sh
+  $ npx sequelize db:migrate
+```
 * **Down** 
-```sh $ npx sequelize db:migrate:undo ```
+```sh 
+  $ npx sequelize db:migrate:undo
+```
 
 # Run
-```sh npm start```
+```sh
+  $npm start
+```
