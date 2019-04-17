@@ -6,7 +6,7 @@ const create = async (ctx) => {
   if (!body.userName || typeof body.userName !== 'string') {
     ctx.status = 400
     ctx.response.body = {
-      message: 'userName key validation error'
+      message: 'userName is required'
     }
 
     return

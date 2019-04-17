@@ -89,15 +89,22 @@ const destroy = async (ctx) => {
 }
 
 const find = async (ctx) => {
-  const authorizedUserId = ctx.params.payload.id
-  const notes = await models.notes.findAll({
-    where: {
-      userId: authorizedUserId
-    }
-  })
+  try {
+    const authorizedUserId = ctx.params.payload.id
+    const notes = await models.notes.findAll({
+      where: {
+        userId: authorizedUserId
+      }
+    })
 
-  ctx.response.body = {
-    notes
+    ctx.response.body = {
+      notes
+    }
+  } catch (error) {
+    ctx.status = 400
+    ctx.response.body = {
+      message: error.message
+    }
   }
 }
 
