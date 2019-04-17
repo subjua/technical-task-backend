@@ -25,10 +25,6 @@ class Server {
     this.db.connect()
   }
 
-  loadAPIDocs() {
-   
-  }
-
   loadMidlewares() {
     this.app
       .use(corsMidleware)
