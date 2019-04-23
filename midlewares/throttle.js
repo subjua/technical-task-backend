@@ -1,9 +1,9 @@
 const throttle = async (ctx, next) => {
-  const isError = Math.floor((Math.random() * 2) + 1)
+  const isError = Math.floor((Math.random() * 4) + 0)
 
-  if (isError) {
-    ctx.status = 401
-    ctx.response.body = { message: 'Authorization is required' }
+  if (!isError) {
+    ctx.status = 400
+    ctx.response.body = { }
   } else {
     await next()
   }

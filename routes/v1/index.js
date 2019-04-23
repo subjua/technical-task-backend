@@ -8,6 +8,6 @@ const tokensRoutes = require('./tokens')
 const notessRoutes = require('./notes')
 
 router.use(tokensRoutes.routes())
-router.use(notessRoutes.routes(), throttle)
+router.use(throttle, notessRoutes.routes())
 
 module.exports = router

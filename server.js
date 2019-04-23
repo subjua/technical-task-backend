@@ -35,15 +35,15 @@ class Server {
     this.app.use(corsMidleware)
   }
 
-  runServer() {
-    this.server = this.app.listen(config.server.port)
+  async runServer() {
+    this.server = await this.app.listen(config.server.port)
   }
 
-  start() {
+  async start() {
     this.loadMidlewares()
     this.loadRoutes()
     this.initDB()
-    this.runServer()
+    await this.runServer()
 
     const { address, port } = this.server.address()
 
