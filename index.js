@@ -1,4 +1,5 @@
-const Server = require('./server')
-const app = new Server()
+'use strict';
 
-app.start()
+const initServer = require('./src/server');
+
+initServer();

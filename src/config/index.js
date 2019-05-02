@@ -21,4 +21,4 @@ module.exports = {
       idle: 500
     }
   }
-}
+};

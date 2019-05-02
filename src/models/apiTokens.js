@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
       timestamps: false
     }
-  )
+  );
 
-  return ApiTokens
-}
+  return ApiTokens;
+};
