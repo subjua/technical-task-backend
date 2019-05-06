@@ -10,7 +10,8 @@
 
 ----
 
-## Get Application Token
+## Get API Token
+* API Token Should be generated once, this is not a user token.
 * **Method** : `POST`
 * **URL** : `/api/v1/tokens`
 * **Data Params**  
