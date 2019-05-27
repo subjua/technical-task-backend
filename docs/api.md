@@ -1,5 +1,7 @@
 # API V1 Docs
 
+## API URL http://159.89.96.181/api/v1/
+
 ## Endpoints
 * [`POST /api/v1/tokens`](#get-application-token) - Create token for the application
 * [`GET /api/v1/notes`](#get-notes) - Get all notes.
